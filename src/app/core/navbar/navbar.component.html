@@ -1,0 +1,36 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="container ">
+
+    <a class="navbar-brand" routerLink="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <!-- Features -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Features
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/dynamic-component-loader">Dynamic Component Loader</a>
+          </div>
+        </li>
+        <!-- end Features -->
+
+        <!-- Components -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownComponentsLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Components
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownComponentsLink">
+            <a class="dropdown-item" routerLink="/table">Table</a>
+          </div>
+        </li>
+        <!-- end Components -->
+      </ul>
+    </div>
+  </div>
+</nav>

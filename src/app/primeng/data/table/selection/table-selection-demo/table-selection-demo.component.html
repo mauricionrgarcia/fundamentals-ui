@@ -1,0 +1,87 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-12 mb-12">
+      <h4>Person contacts</h4>
+      <hr size="30">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="form-label-group">
+        <div class="form-row">
+          <div class="col-lg-10 col-mg-12">
+            <div class="form-label-group">
+              <input type="text" class="form-control" id="validationCustom01" placeholder="First name"
+                pInputText [(ngModel)]="person.name" name="name" >
+              <label for="validationCustom01">First name</label>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 form-btn-group">
+            <p-button label="Add" [disabled]="!person.name" styleClass="ui-button-success h-100 w-100 form-btn" class="form-btn-w100" (onClick)="addPerson()" style="height: 100%;"></p-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <p-message  *ngIf="!selectedPerson" severity="info" text="Select one person to see phones" styleClass="'w-100'"></p-message> -->
+      <div *ngIf="false && !selectedPerson" class="alert alert-warning" role="alert">
+          Select one person to see phones
+      </div>
+      <p-dataTable [(value)]="people" selectionMode="single" [(selection)]="selectedPerson"
+        (onRowSelect)="onRowSelect($event)">
+          <p-header>People</p-header>
+          <p-column field="name" header="Name"></p-column>
+          <p-column header="Actions" [style]="{'width':'100px', 'text-align':'center'}">
+            <ng-template let-col let-p="rowData" pTemplate="body">
+              <p-button icon="fa fa-fw fa-close" (onClick)="removePerson(p)"></p-button>
+            </ng-template>
+          </p-column>
+      </p-dataTable>
+
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="form-label-group">
+            <div class="form-row">
+              <div class="col-lg-10 col-mg-12">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="inputNumber" placeholder="Phone"
+                    pInputText [(ngModel)]="phone.number" name="number"
+                    [disabled]="! selectedPerson">
+                  <label for="inputNumber">Phone number</label>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 form-btn-group">
+                <p-button label="Add" styleClass="ui-button-success h-100 w-100 form-btn" class="form-btn-w100" (onClick)="addPhone()" style="height: 100%;"
+                [disabled]="! selectedPerson || ! phone.number" ></p-button>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="!selectedPerson" class="alert alert-warning" role="alert">
+              Select one person to see phones
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div *ngIf="selectedPerson">
+            <p-dataTable [(value)]="selectedPerson.phones">
+              <p-header>{{selectedPerson.name}}'s contacts</p-header>
+              <p-column field="number" header="Number"></p-column>
+              <p-column header="Actions" [style]="{'width':'100px', 'text-align':'center'}">
+                <ng-template let-col let-p="rowData" pTemplate="body">
+                    <p-button icon="fa fa-fw fa-close" (onClick)="removePhone(p)"></p-button>
+                  </ng-template>
+              </p-column>
+
+            </p-dataTable>
+          </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 container-btn-botton">
+        <hr size="30">
+        <p-button label="Back" styleClass="ui-button-warning h-100 w-100 btn-botton"></p-button>
+        <p-button label="Save" styleClass="h-100 w-100 btn-botton"></p-button>
+    </div>
+  </div>
+</div>
