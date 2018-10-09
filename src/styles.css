@@ -108,3 +108,59 @@ body {
 .btn-botton{
   padding: var(--input-padding-y) var(--input-padding-x);
 }
+
+.box {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  padding: 1rem!important;
+  margin-bottom: 1rem!important;
+  margin-top: 1rem!important;
+  border-radius: .25rem!important;
+  background-color: #fff!important;
+}
+
+.container {
+  padding-right: 0;
+  padding-left: 0
+}
+
+.navbar-dark {
+  background-color: #222;
+}
+
+.navbar-collapse {
+  border-color: #101010;
+}
+
+
+.navbar {
+  padding: .5rem 0rem;
+}
+
+.navbar > .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-header {
+  width: 100%
+}
+
+.navbar-brand {
+  float: left;
+  font-size: 18px;
+}
+
+.navbar-dark .navbar-brand {
+  color: #9d9d9d;
+}
+
+.navbar-toggle {
+  padding: .5rem 0rem;
+}
+
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #00a6e80f;
+}
